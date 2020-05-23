@@ -17,7 +17,21 @@ const checkIfMatch = () => {
     something.textContent = "Please type again!";
   }
 };
+
+const startCountdown = () => {
+  let timeleft = 10;
+  let downloadTimer = setInterval(function () {
+    countdownField.textContent = timeleft;
+    if (timeleft <= 0) {
+      clearInterval(downloadTimer);
+    }
+
+    timeleft -= 1;
+  }, 1000);
+};
+
 showText(index);
+startCountdown();
 
 // startGameBtn.addEventListener("click", () => {
 //   checkIfMatch();
