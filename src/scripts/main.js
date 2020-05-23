@@ -1,3 +1,14 @@
-const mainContainer = document.getElementById("main-container");
+let gameIsRunning = false;
+const textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
 
-let gameIsRunning;
+const checkIfMatch = () => {
+  for (const i of textToType) {
+    if (i == inputField.value) {
+      showTextField.textContent = "Thats right";
+    }
+  }
+};
+
+startGameBtn.addEventListener("click", () => {
+  checkIfMatch();
+});
