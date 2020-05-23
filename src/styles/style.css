@@ -1,0 +1,9 @@
+#main-container {
+  text-align: center;
+  background-color: grey;
+  font-family: "Piedra", cursive;
+}
+
+#show-input {
+  font-size: large;
+}
