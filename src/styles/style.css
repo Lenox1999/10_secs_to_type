@@ -1,9 +1,7 @@
 #main-container {
-  position: relative;
   text-align: center;
   background-color: grey;
   font-family: "Piedra", cursive;
-  height: 250;
 }
 
 #show-input {
