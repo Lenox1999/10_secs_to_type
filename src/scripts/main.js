@@ -1,14 +1,30 @@
 let gameIsRunning = false;
 const textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
+let index = 0;
 
-const checkIfMatch = () => {
-  for (const i of textToType) {
-    if (i == inputField.value) {
-      showTextField.textContent = "Thats right";
-    }
-  }
+const showText = (index) => {
+  showTextField.textContent = `Word to type now: ${textToType[index]}`;
 };
 
-startGameBtn.addEventListener("click", () => {
-  checkIfMatch();
+const checkIfMatch = () => {
+  if (inputField.value == textToType[index]) {
+    index += 1;
+    showText(index);
+    inputField.value = "";
+    something.textContent = "";
+  } else if (inputField.value != textToType[index]) {
+    inputField.value = "";
+    something.textContent = "Please type again!";
+  }
+};
+showText(index);
+
+// startGameBtn.addEventListener("click", () => {
+//   checkIfMatch();
+// });
+
+inputField.addEventListener("keyup", (e) => {
+  if (e.key == "Enter") {
+    checkIfMatch();
+  }
 });
