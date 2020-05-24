@@ -4,12 +4,16 @@ var showTextField = document.getElementById("show-text-to-type");
 var something = document.getElementById("show-if-right");
 var countdownField = document.getElementById("countdown");
 var textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
+var showHighScore = document.getElementById("show-highscore");
+var highScore = 0;
 var index = 0;
 var score = 0;
 var youCanType = false;
 var timeleft = 10;
 var updateScore = function (score) {
-    something.textContent = score;
+    something.textContent = "" + score;
+    highScore = score;
+    showHighScore.textContent = "" + highScore;
 };
 var showText = function (index) {
     showTextField.textContent = "Word to type now: " + textToType[index];

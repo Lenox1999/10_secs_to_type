@@ -3,15 +3,19 @@ const inputField = document.querySelector("input");
 const showTextField = document.getElementById("show-text-to-type");
 const something = document.getElementById("show-if-right");
 const countdownField = document.getElementById("countdown");
-
 const textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
+const showHighScore = document.getElementById("show-highscore");
+
+let highScore = 0;
 let index = 0;
 let score = 0;
 let youCanType = false;
 let timeleft = 10;
 
-const updateScore = (score) => {
-  something.textContent = score;
+const updateScore = (score: number) => {
+  something.textContent = `${score}`;
+  highScore = score;
+  showHighScore.textContent = `${highScore}`;
 };
 
 const showText = (index) => {
