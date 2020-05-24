@@ -1,10 +1,4 @@
-const startGameBtn = document.querySelector("button");
-const inputField = document.querySelector("input");
-const showTextField = document.getElementById("show-text-to-type");
-const something = document.getElementById("show-if-right");
-const countdownField = document.getElementById("countdown");
 const textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
-const showHighScore = document.getElementById("show-highscore");
 
 let highScore = 0;
 let index = 0;

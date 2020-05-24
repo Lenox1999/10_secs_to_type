@@ -9,4 +9,5 @@ const highScoreHandler = (score: number) => {
   } else if (calculateScore < previousScore) {
     saveHighscore = previousScore;
   }
+  return saveHighscore;
 };
