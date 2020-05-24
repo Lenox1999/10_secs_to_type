@@ -4,5 +4,6 @@
     "allowJs": true,
     "target": "ES5"
   },
+  "compileOnSave": true,
   "include": ["./src/scripts/*"]
 }

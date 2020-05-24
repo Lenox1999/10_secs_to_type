@@ -41,7 +41,7 @@ var checkIfMatch = function () {
 };
 var startCountdown = function (timeleft) {
     var downloadTimer = setInterval(function () {
-        countdownField.textContent = timeleft;
+        countdownField.textContent = "" + timeleft;
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
             countdownField.textContent =

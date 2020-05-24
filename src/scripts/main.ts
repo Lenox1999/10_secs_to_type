@@ -18,7 +18,7 @@ const updateScore = (score: number) => {
   showHighScore.textContent = `${highScore}`;
 };
 
-const showText = (index) => {
+const showText = (index: number) => {
   showTextField.textContent = `Word to type now: ${textToType[index]}`;
 };
 
@@ -42,9 +42,9 @@ const checkIfMatch = () => {
   }
 };
 
-const startCountdown = (timeleft) => {
+const startCountdown = (timeleft: number) => {
   let downloadTimer = setInterval(function () {
-    countdownField.textContent = timeleft;
+    countdownField.textContent = `${timeleft}`;
     if (timeleft <= 0) {
       clearInterval(downloadTimer);
       countdownField.textContent =
