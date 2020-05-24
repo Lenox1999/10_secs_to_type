@@ -3,8 +3,9 @@ var gameEnded = function (interactionHandler, score) {
     if (!youCanType) {
         var highscore = interactionHandler(score);
         showHighScore.textContent = "" + highscore;
-        something.textContent = "That is your final score: " + score;
-        // startGameBtn.textContent = "Reset";
+        something.textContent = "This is your final score: " + score;
+        showTextField.textContent =
+            "Your time is over! See your score and highscore below! :D";
     }
     else if (youCanType) {
         return;
@@ -30,4 +31,8 @@ var restartGame = function () {
     var highscore = highScoreHandler(saveHighscore);
     showHighScore.textContent = "Your Highscore: " + highscore;
     checkIfMatch();
+};
+var showWinnerScreen = function () {
+    showTextField.textContent =
+        "Yay... you have beaten it... you have typed all the words in ten secs... yay!";
 };

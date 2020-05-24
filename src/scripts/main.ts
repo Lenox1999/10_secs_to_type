@@ -26,6 +26,9 @@ const checkIfMatch = () => {
       inputField.value = "";
       something.textContent = "";
       updateScore(score);
+      if (index > textToType.length) {
+        showWinnerScreen();
+      }
     } else if (inputField.value != textToType[index]) {
       score -= 1;
       inputField.value = "";
