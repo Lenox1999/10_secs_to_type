@@ -41,8 +41,7 @@ const startCountdown = (timeleft: number) => {
     countdownField.textContent = `${timeleft}`;
     if (timeleft <= 0) {
       clearInterval(downloadTimer);
-      countdownField.textContent =
-        "Your time is over, you cant type anymore!";
+      gameEnded(highScoreHandler, score);
       youCanType = false;
     }
 

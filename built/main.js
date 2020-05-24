@@ -1,10 +1,4 @@
-var startGameBtn = document.querySelector("button");
-var inputField = document.querySelector("input");
-var showTextField = document.getElementById("show-text-to-type");
-var something = document.getElementById("show-if-right");
-var countdownField = document.getElementById("countdown");
 var textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
-var showHighScore = document.getElementById("show-highscore");
 var highScore = 0;
 var index = 0;
 var score = 0;
@@ -44,8 +38,7 @@ var startCountdown = function (timeleft) {
         countdownField.textContent = "" + timeleft;
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
-            countdownField.textContent =
-                "Your time is over, you cant type anymore!";
+            gameEnded(highScoreHandler, score);
             youCanType = false;
         }
         timeleft -= 1;

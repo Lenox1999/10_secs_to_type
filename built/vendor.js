@@ -1,5 +1,6 @@
-// const startGameBtn = document.querySelector("button");
-// const inputField = document.querySelector("input");
-// const showTextField = document.getElementById("show-text-to-type");
-// const something = document.getElementById("show-if-right");
-// const countdownField = document.getElementById("countdown");
+var startGameBtn = document.querySelector("button");
+var inputField = document.querySelector("input");
+var showTextField = document.getElementById("show-text-to-type");
+var something = document.getElementById("show-if-right");
+var countdownField = document.getElementById("countdown");
+var showHighScore = document.getElementById("show-highscore");
