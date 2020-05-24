@@ -1,4 +1,8 @@
-// let gameIsRunning = false;
+var startGameBtn = document.querySelector("button");
+var inputField = document.querySelector("input");
+var showTextField = document.getElementById("show-text-to-type");
+var something = document.getElementById("show-if-right");
+var countdownField = document.getElementById("countdown");
 var textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
 var index = 0;
 var score = 0;
