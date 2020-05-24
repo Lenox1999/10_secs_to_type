@@ -5,6 +5,7 @@ let index = 0;
 let score = 0;
 let youCanType = false;
 let timeleft = 10;
+let gameHasFinished = false;
 
 const updateScore = (score: number) => {
   something.textContent = `${score}`;
@@ -43,6 +44,7 @@ const startCountdown = (timeleft: number) => {
       clearInterval(downloadTimer);
       gameEnded(highScoreHandler, score);
       youCanType = false;
+      gameHasFinished = true;
     }
 
     timeleft -= 1;
@@ -53,6 +55,15 @@ startGameBtn.addEventListener("click", () => {
   startCountdown(timeleft);
   showText(index);
   youCanType = true;
+});
+
+resetButton.addEventListener("click", () => {
+  if (gameHasFinished) {
+    restartGame();
+  } else if (!gameHasFinished) {
+    showTextField.textContent = "Your game hasnt finished!";
+    return;
+  }
 });
 
 inputField.addEventListener("keyup", (e) => {

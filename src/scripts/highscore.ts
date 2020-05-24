@@ -5,6 +5,7 @@ const gameEnded = (interactionHandler: Function, score: number) => {
     let highscore = interactionHandler(score);
     showHighScore.textContent = `${highscore}`;
     something.textContent = `That is your final score: ${score}`;
+    // startGameBtn.textContent = "Reset";
   } else if (youCanType) {
     return;
   }
@@ -20,4 +21,14 @@ const highScoreHandler = (score: number) => {
     saveHighscore = previousScore;
   }
   return saveHighscore;
+};
+
+const restartGame = () => {
+  index = 0;
+  youCanType = true;
+  gameHasFinished = false;
+  score = 0;
+  let highscore = highScoreHandler(saveHighscore);
+  showHighScore.textContent = `Your Highscore: ${highscore}`;
+  checkIfMatch();
 };

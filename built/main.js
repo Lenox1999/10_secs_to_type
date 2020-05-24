@@ -4,6 +4,7 @@ var index = 0;
 var score = 0;
 var youCanType = false;
 var timeleft = 10;
+var gameHasFinished = false;
 var updateScore = function (score) {
     something.textContent = "" + score;
     highScore = score;
@@ -40,6 +41,7 @@ var startCountdown = function (timeleft) {
             clearInterval(downloadTimer);
             gameEnded(highScoreHandler, score);
             youCanType = false;
+            gameHasFinished = true;
         }
         timeleft -= 1;
     }, 1000);
@@ -48,6 +50,15 @@ startGameBtn.addEventListener("click", function () {
     startCountdown(timeleft);
     showText(index);
     youCanType = true;
+});
+resetButton.addEventListener("click", function () {
+    if (gameHasFinished) {
+        restartGame();
+    }
+    else if (!gameHasFinished) {
+        showTextField.textContent = "Your game hasnt finished!";
+        return;
+    }
 });
 inputField.addEventListener("keyup", function (e) {
     if (e.key == "Enter") {
