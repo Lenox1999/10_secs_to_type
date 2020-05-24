@@ -7,3 +7,15 @@
 #show-input {
   font-size: large;
 }
+
+#main-input {
+  height: 50px;
+  border-radius: 12px;
+  border: solid, 50px;
+  border-color: black;
+  background-color: white;
+}
+
+#countdown {
+  font-size: 40;
+}
