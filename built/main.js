@@ -1,20 +1,24 @@
-const startGameBtn = document.querySelector("button");
-const inputField = document.querySelector("input");
-const showTextField = document.getElementById("show-text-to-type");
-const something = document.getElementById("show-if-right");
-const countdownField = document.getElementById("countdown");
-const textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
-let index = 0;
-let score = 0;
-let youCanType = false;
-let timeleft = 10;
-const updateScore = (score) => {
-    something.textContent = score;
+var startGameBtn = document.querySelector("button");
+var inputField = document.querySelector("input");
+var showTextField = document.getElementById("show-text-to-type");
+var something = document.getElementById("show-if-right");
+var countdownField = document.getElementById("countdown");
+var textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
+var showHighScore = document.getElementById("show-highscore");
+var highScore = 0;
+var index = 0;
+var score = 0;
+var youCanType = false;
+var timeleft = 10;
+var updateScore = function (score) {
+    something.textContent = "" + score;
+    highScore = score;
+    showHighScore.textContent = "" + highScore;
 };
-const showText = (index) => {
-    showTextField.textContent = `Word to type now: ${textToType[index]}`;
+var showText = function (index) {
+    showTextField.textContent = "Word to type now: " + textToType[index];
 };
-const checkIfMatch = () => {
+var checkIfMatch = function () {
     if (youCanType) {
         if (inputField.value == textToType[index]) {
             index += 1;
@@ -35,8 +39,8 @@ const checkIfMatch = () => {
         inputField.value = "You cant type anymore";
     }
 };
-const startCountdown = (timeleft) => {
-    let downloadTimer = setInterval(function () {
+var startCountdown = function (timeleft) {
+    var downloadTimer = setInterval(function () {
         countdownField.textContent = timeleft;
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
@@ -47,12 +51,12 @@ const startCountdown = (timeleft) => {
         timeleft -= 1;
     }, 1000);
 };
-startGameBtn.addEventListener("click", () => {
+startGameBtn.addEventListener("click", function () {
     startCountdown(timeleft);
     showText(index);
     youCanType = true;
 });
-inputField.addEventListener("keyup", (e) => {
+inputField.addEventListener("keyup", function (e) {
     if (e.key == "Enter") {
         checkIfMatch();
     }

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./built",
     "allowJs": true,
-    "target": "ESNext"
+    "target": "ES5"
   },
   "include": ["./src/scripts/*"]
 }
