@@ -1,16 +1,11 @@
-const startGameBtn = document.querySelector("button");
-const inputField = document.querySelector("input");
-const showTextField = document.getElementById("show-text-to-type");
-const something = document.getElementById("show-if-right");
-const countdownField = document.getElementById("countdown");
 const textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
-const showHighScore = document.getElementById("show-highscore");
 
 let highScore = 0;
 let index = 0;
 let score = 0;
 let youCanType = false;
 let timeleft = 10;
+let gameHasFinished = false;
 
 const updateScore = (score: number) => {
   something.textContent = `${score}`;
@@ -18,7 +13,7 @@ const updateScore = (score: number) => {
   showHighScore.textContent = `${highScore}`;
 };
 
-const showText = (index) => {
+const showText = (index: number) => {
   showTextField.textContent = `Word to type now: ${textToType[index]}`;
 };
 
@@ -31,6 +26,9 @@ const checkIfMatch = () => {
       inputField.value = "";
       something.textContent = "";
       updateScore(score);
+      if (index > textToType.length) {
+        showWinnerScreen();
+      }
     } else if (inputField.value != textToType[index]) {
       score -= 1;
       inputField.value = "";
@@ -42,14 +40,14 @@ const checkIfMatch = () => {
   }
 };
 
-const startCountdown = (timeleft) => {
+const startCountdown = (timeleft: number) => {
   let downloadTimer = setInterval(function () {
-    countdownField.textContent = timeleft;
+    countdownField.textContent = `${timeleft}`;
     if (timeleft <= 0) {
       clearInterval(downloadTimer);
-      countdownField.textContent =
-        "Your time is over, you cant type anymore!";
+      gameEnded(highScoreHandler, score);
       youCanType = false;
+      gameHasFinished = true;
     }
 
     timeleft -= 1;
@@ -60,6 +58,15 @@ startGameBtn.addEventListener("click", () => {
   startCountdown(timeleft);
   showText(index);
   youCanType = true;
+});
+
+resetButton.addEventListener("click", () => {
+  if (gameHasFinished) {
+    restartGame();
+  } else if (!gameHasFinished) {
+    showTextField.textContent = "Your game hasnt finished!";
+    return;
+  }
 });
 
 inputField.addEventListener("keyup", (e) => {

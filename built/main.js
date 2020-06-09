@@ -1,15 +1,10 @@
-var startGameBtn = document.querySelector("button");
-var inputField = document.querySelector("input");
-var showTextField = document.getElementById("show-text-to-type");
-var something = document.getElementById("show-if-right");
-var countdownField = document.getElementById("countdown");
 var textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
-var showHighScore = document.getElementById("show-highscore");
 var highScore = 0;
 var index = 0;
 var score = 0;
 var youCanType = false;
 var timeleft = 10;
+var gameHasFinished = false;
 var updateScore = function (score) {
     something.textContent = "" + score;
     highScore = score;
@@ -27,6 +22,9 @@ var checkIfMatch = function () {
             inputField.value = "";
             something.textContent = "";
             updateScore(score);
+            if (index > textToType.length) {
+                showWinnerScreen();
+            }
         }
         else if (inputField.value != textToType[index]) {
             score -= 1;
@@ -41,12 +39,12 @@ var checkIfMatch = function () {
 };
 var startCountdown = function (timeleft) {
     var downloadTimer = setInterval(function () {
-        countdownField.textContent = timeleft;
+        countdownField.textContent = "" + timeleft;
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
-            countdownField.textContent =
-                "Your time is over, you cant type anymore!";
+            gameEnded(highScoreHandler, score);
             youCanType = false;
+            gameHasFinished = true;
         }
         timeleft -= 1;
     }, 1000);
@@ -55,6 +53,15 @@ startGameBtn.addEventListener("click", function () {
     startCountdown(timeleft);
     showText(index);
     youCanType = true;
+});
+resetButton.addEventListener("click", function () {
+    if (gameHasFinished) {
+        restartGame();
+    }
+    else if (!gameHasFinished) {
+        showTextField.textContent = "Your game hasnt finished!";
+        return;
+    }
 });
 inputField.addEventListener("keyup", function (e) {
     if (e.key == "Enter") {
