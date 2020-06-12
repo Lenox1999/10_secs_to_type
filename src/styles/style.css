@@ -1,21 +1,52 @@
 #main-container {
+  /* position: absolute; */
+  margin: auto;
+  font-family: 'Balsamiq Sans', cursive;
+
+  font-family: 'Indie Flower', cursive;
+  /* align-self: center; */
+  border-radius: 2rem;
+  border: 2.5px solid #ccc;
+  font-size: 40px;
   text-align: center;
-  background-color: grey;
-  font-family: "Piedra", cursive;
+  background-color: #5788e9;
+  width: 800px;
 }
 
-#show-input {
+/* #show-input {
+  text-align: center;
   font-size: large;
-}
+} */
 
 #main-input {
+  font-family: 'Balsamiq Sans', cursive;
+
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+  font-size: 2rem;
   height: 50px;
-  border-radius: 12px;
-  border: solid, 50px;
-  border-color: black;
+  padding: 20px;
   background-color: white;
+  border-radius: 400px;
+  border: 0px solid black;
+  margin-bottom: 20px;
 }
 
 #countdown {
-  font-size: 40;
+  font-size: 40px;
+}
+
+button {
+  padding: 1rem;
+  border: 1.5px solid #fd4c51;
+  border-radius: 12px;
+  background-color: #f60006;
+  /* font-family: 'Balsamiq Sans', cursive;
+   */
+  font-family: 'Balsamiq Sans', cursive;
+
+  font-family: 'Indie Flower', cursive;
+  font-size: 2rem;
+  margin: 5px;
+  box-shadow: 5px 5px 5px black;
 }
