@@ -1,4 +1,4 @@
-var textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
+// const textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
 var highScore = 0;
 var index = 0;
 var score = 0;
@@ -19,8 +19,8 @@ var checkIfMatch = function () {
             index += 1;
             score += 1;
             showText(index);
-            inputField.value = "";
-            something.textContent = "";
+            inputField.value = '';
+            something.textContent = '';
             updateScore(score);
             if (index > textToType.length) {
                 showWinnerScreen();
@@ -28,13 +28,13 @@ var checkIfMatch = function () {
         }
         else if (inputField.value != textToType[index]) {
             score -= 1;
-            inputField.value = "";
-            something.textContent = "Please type again!";
+            inputField.value = '';
+            something.textContent = 'Please type again!';
             updateScore(score);
         }
     }
     else {
-        inputField.value = "You cant type anymore";
+        inputField.value = 'You cant type anymore';
     }
 };
 var startCountdown = function (timeleft) {
@@ -49,22 +49,22 @@ var startCountdown = function (timeleft) {
         timeleft -= 1;
     }, 1000);
 };
-startGameBtn.addEventListener("click", function () {
+startGameBtn.addEventListener('click', function () {
     startCountdown(timeleft);
     showText(index);
     youCanType = true;
 });
-resetButton.addEventListener("click", function () {
+resetButton.addEventListener('click', function () {
     if (gameHasFinished) {
         restartGame();
     }
     else if (!gameHasFinished) {
-        showTextField.textContent = "Your game hasnt finished!";
+        showTextField.textContent = 'Your game hasnt finished!';
         return;
     }
 });
-inputField.addEventListener("keyup", function (e) {
-    if (e.key == "Enter") {
+inputField.addEventListener('keyup', function (e) {
+    if (e.key == 'Enter') {
         checkIfMatch();
     }
 });

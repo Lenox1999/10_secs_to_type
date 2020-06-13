@@ -1,4 +1,4 @@
-const textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
+// const textToType = ["Python", "Hacking", "JavaScript", "TypeScript"];
 
 let highScore = 0;
 let index = 0;
@@ -23,20 +23,20 @@ const checkIfMatch = () => {
       index += 1;
       score += 1;
       showText(index);
-      inputField.value = "";
-      something.textContent = "";
+      inputField.value = '';
+      something.textContent = '';
       updateScore(score);
       if (index > textToType.length) {
         showWinnerScreen();
       }
     } else if (inputField.value != textToType[index]) {
       score -= 1;
-      inputField.value = "";
-      something.textContent = "Please type again!";
+      inputField.value = '';
+      something.textContent = 'Please type again!';
       updateScore(score);
     }
   } else {
-    inputField.value = "You cant type anymore";
+    inputField.value = 'You cant type anymore';
   }
 };
 
@@ -54,23 +54,23 @@ const startCountdown = (timeleft: number) => {
   }, 1000);
 };
 
-startGameBtn.addEventListener("click", () => {
+startGameBtn.addEventListener('click', () => {
   startCountdown(timeleft);
   showText(index);
   youCanType = true;
 });
 
-resetButton.addEventListener("click", () => {
+resetButton.addEventListener('click', () => {
   if (gameHasFinished) {
     restartGame();
   } else if (!gameHasFinished) {
-    showTextField.textContent = "Your game hasnt finished!";
+    showTextField.textContent = 'Your game hasnt finished!';
     return;
   }
 });
 
-inputField.addEventListener("keyup", (e) => {
-  if (e.key == "Enter") {
+inputField.addEventListener('keyup', (e) => {
+  if (e.key == 'Enter') {
     checkIfMatch();
   }
 });

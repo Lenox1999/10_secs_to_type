@@ -13,11 +13,6 @@
   width: 800px;
 }
 
-/* #show-input {
-  text-align: center;
-  font-size: large;
-} */
-
 #main-input {
   font-family: 'Balsamiq Sans', cursive;
 
@@ -28,7 +23,7 @@
   padding: 20px;
   background-color: white;
   border-radius: 400px;
-  border: 0px solid black;
+  border: 3.5px solid #1352cf;
   margin-bottom: 20px;
 }
 
@@ -39,7 +34,7 @@
 button {
   padding: 1rem;
   border: 1.5px solid #fd4c51;
-  border-radius: 12px;
+  border-radius: 400px;
   background-color: #f60006;
   /* font-family: 'Balsamiq Sans', cursive;
    */
@@ -49,4 +44,12 @@ button {
   font-size: 2rem;
   margin: 5px;
   box-shadow: 5px 5px 5px black;
+}
+
+.toggleRed {
+  background-color: red;
+}
+
+.toggleBlue {
+  background-color: #5788e9;
 }
