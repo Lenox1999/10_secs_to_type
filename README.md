@@ -14,3 +14,7 @@ Clone the repo and open the scr/index.html in the browser
 # future updates
 
 a much prettier look will be added somewhen in the future
+
+# Extra info
+
+code in feature branch is unstable ... working code is in master branch
