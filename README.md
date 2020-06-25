@@ -1,6 +1,6 @@
 # 10_secs_to_type
 
-A simple game to check how fast you can type
+A simple game to check many words you can type in 10 seconds
 
 # how does it work?
 
